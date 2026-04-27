@@ -6,7 +6,6 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
-//var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 
 if (app.Environment.IsDevelopment())
