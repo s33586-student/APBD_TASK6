@@ -124,11 +124,6 @@ namespace APBD_TASK6.Controllers
         public async Task<IActionResult> CreateAppointment([FromBody] CreateAppointmentRequestDto request)
         {
 
-            if (string.IsNullOrWhiteSpace(request.Reason) || request.Reason.Length > 250)
-            {
-                return BadRequest(new ErrorResponseDto("Reason cannot be empty and should have at most 250 characters."));
-            }
-
             if (request.AppointmentDate < DateTime.UtcNow)
             {
                 return BadRequest(new ErrorResponseDto("Appointment date cannot be in the past."));
